@@ -1,0 +1,6 @@
+syntax="proto3";
+
+message Post {
+    string id = 1;
+    string title = 2;
+}

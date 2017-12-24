@@ -1,0 +1,30 @@
+syntax="proto3";
+
+package com.infinityworks.google.model;
+
+//option java_outer_classname="LibraryModel";
+
+message Book{
+    string isbn = 1;
+    string title = 2;
+    string publish_date = 3;
+    repeated Author author = 4;
+    Genre genre = 5;
+
+    message Author{
+        string name = 1;
+    }
+
+    enum Genre{
+        UNKNOWN = 0;
+        SELF_DEVELOPMENT = 1;
+        BUSINESS = 2;
+        TECHNOLOGY = 3;
+        ROMANCE = 4;
+        THRILLER = 5;
+    }
+}
+
+message Library{
+    repeated Book books = 1;
+}
